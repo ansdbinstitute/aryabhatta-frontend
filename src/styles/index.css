@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Public Site Colors ─── */
+  --color-primary: #0A192F;
+  --color-secondary: #082B76;
+  --color-accent: #FFB800;
+  --color-danger: #CC1111;
+  --color-deep: #221610;
+  --color-subtle: #f8f6f6;
+  
+  --color-whatsapp: #25D366;
+  --color-facebook: #1877F2;
+  --color-youtube: #FF0000;
+  --color-support: #1248BB;
+
+  --color-ansdb-navy: var(--color-primary);
+  --color-ansdb-gold: var(--color-accent);
+  --color-ansdb-red: var(--color-danger);
+  --color-ansdb-dark: var(--color-deep);
+  --color-ansdb-sky: var(--color-subtle);
+
+  /* ─── ERP-Specific Colors ─── */
+  --color-erp-bg: #F1F5F9;
+  --color-erp-sidebar: #0F172A;
+  --color-erp-sidebar-hover: #1E293B;
+  --color-erp-sidebar-active: #1E3A5F;
+  --color-erp-card: #FFFFFF;
+  --color-erp-border: #E2E8F0;
+
+  /* ─── Semantic Colors ─── */
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+  --color-error: #DC2626;
+
+  /* ─── Public Site Fonts ─── */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Nunito", sans-serif;
+  --font-sans: "Public Sans", sans-serif;
+
+  /* ─── ERP Font ─── */
+  --font-erp: "Inter", "Public Sans", sans-serif;
+
+  /* ─── Radii ─── */
+  --radius-eight: 8px;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* ─── Shadows ─── */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-sidebar: 4px 0 12px rgba(0,0,0,0.05);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .diagonal-pattern {
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255, 0.05) 0px, rgba(255,255,255, 0.05) 2px, transparent 2px, transparent 10px);
+  }
+  
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  /* ERP-specific utilities */
+  .font-erp {
+    font-family: var(--font-erp);
+  }
+
+  .font-erp h1, .font-erp h2, .font-erp h3, .font-erp h4, .font-erp h5, .font-erp h6 {
+    font-family: var(--font-erp);
+    letter-spacing: -0.02em;
+  }
+}
+
+:root {
+  color-scheme: light;
+  background-color: var(--color-subtle);
+  color: #0f172a;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* ERP Scrollbar */
+.font-erp ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.font-erp ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.font-erp ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+.font-erp ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Animation utilities for ERP */
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn95 {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+  animation-duration: 200ms;
+}
+
+.slide-in-from-right-5 {
+  animation-name: slideInFromRight;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.zoom-in-95 {
+  animation-name: zoomIn95;
+}

@@ -1,0 +1,10 @@
+/**
+ * ANSDB Frontend Application
+ * 
+ * Copyright (c) 2024 Pinaki Chakraborty. All Rights Reserved.
+ * Licensed to: Aryabhatta National Skill Development Board (ANSDB)
+ *              A unit of Jibankushal Foundation
+ * 
+ * Educational use only. Redistribution is strictly prohibited.
+ * See LICENSE file for full license terms.
+ */

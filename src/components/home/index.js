@@ -1,0 +1,11 @@
+export { default as Hero } from './Hero';
+export { default as StatsBar } from './StatsBar';
+export { default as AboutSection } from './AboutSection';
+export { default as CoursesSection } from './CoursesSection';
+export { default as SecretaryMessage } from './SecretaryMessage';
+export { default as WhyChoose } from './WhyChoose';
+export { default as Gallery } from './Gallery';
+export { default as Testimonials } from './Testimonials';
+export { default as EnrollCTA } from './EnrollCTA';
+export { default as ContactSection } from './ContactSection';
+export { default as Notices } from './Notices';

@@ -1,0 +1,212 @@
+# License Badge ( shields.io - for README.md )
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
+[![License: Educational Use Only](https://img.shields.io/badge/Usage-Educational%20Only-blue.svg)](LICENSE)
+[![License: No Redistribution](https://img.shields.io/badge/Redistribution-Not%20Allowed-orange.svg)](LICENSE)
+
+---
+
+```
+╔══════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                      ║
+║   ██████╗ ███████╗ ██████╗ ███████╗███╗   ███╗ ██████╗                                               ║
+║   ██╔══██╗██╔════╝██╔═══██╗██╔════╝████╗ ████║██╔═══██╗                                              ║
+║   ██████╔╝█████╗  ██║   ██║███████╗██╔████╔██║██║   ██║                                              ║
+║   ██╔═══╝ ██╔══╝  ██║   ██║╚════██║██║╚██╔╝██║██║   ██║                                              ║
+║   ██║     ███████╗╚██████╔╝███████║██║ ╚═╝ ██║╚██████╔╝                                              ║
+║   ╚═╝     ╚══════╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝                                               ║
+║                                                                                      ║
+║                          🔐 EDUCATIONAL CODE LICENSE 🔐                               ║
+║                                                                                      ║
+╚══════════════════════════════════════════════════════════════════════════════════════╝
+```
+
+## 📋 LICENSE SUMMARY
+
+| Attribute | Value |
+|----------|-------|
+| **License Type** | Proprietary - Educational Use Only |
+| **Licensor** | Pinaki Chakraborty |
+| **Beneficiary** | Aryabhatta National Skill Development Board (ANSDB) |
+| **Organization** | Jibankushal Foundation (Registered under Section 8 and MCA) |
+| **Restrictions** | No Redistribution • No Commercial Use • No Derivatives |
+| **Year** | 2024 |
+
+---
+
+## 👤 LICENSOR
+
+```
+Pinaki Chakraborty
+(All Rights Reserved)
+```
+
+---
+
+## 🏛️ BENEFICIARY
+
+```
+Aryabhatta National Skill Development Board (ANSDB)
+A unit of Jibankushal Foundation
+An organization registered under Section 8 and MCA, India
+```
+
+---
+
+## 📜 LICENSE TERMS
+
+### ✅ PERMITTED USE
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│  ✓  Viewing and using this code for educational purposes only        │
+│  ✓  Internal use within ANSDB educational programs                  │
+│  ✓  Modifications for personal/internal use only                   │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### ❌ PROHIBITED USES
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│  ✗  REDISTRIBUTION in any form is STRICTLY PROHIBITED              │
+│  ✗  Commercial use is not permitted                                │
+│  ✗  Claiming this code as your own work                           │
+│  ✗  Creating forks or derivative works                            │
+│  ✗  Using for any other institution without written consent       │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📝 FULL LICENSE AGREEMENT
+
+### ARTICLE 1: GRANT OF LICENSE
+
+Pinaki Chakraborty ("Licensor") hereby grants to Aryabhatta National Skill Development Board ("Licensee") a non-exclusive, non-transferable, revocable license to use this software exclusively for educational purposes as described herein.
+
+### ARTICLE 2: DEFINITIONS
+
+- **"Software"** refers to all source code, documentation, and associated materials provided under this license.
+- **"Educational Purposes"** means use for teaching, learning, research, and non-commercial academic activities within ANSDB.
+- **"Redistribution"** means sharing, publishing, selling, or providing access to the Software to any third party in any form.
+
+### ARTICLE 3: PERMITTED ACTIVITIES
+
+The Licensee is permitted to:
+1. View and study the source code for educational purposes
+2. Use the Software within ANSDB's educational programs
+3. Make modifications solely for internal use within ANSDB
+4. Create backups for archival purposes
+
+### ARTICLE 4: PROHIBITED ACTIVITIES
+
+The Licensee shall NOT:
+1. Redistribute, share, or transfer the Software to any third party
+2. Use the Software for any commercial purposes
+3. Claim ownership or authorship of the Software
+4. Create derivative works, forks, or modifications for external distribution
+5. Use the Software for any institution other than ANSDB
+6. Remove, alter, or obscure any copyright notices or proprietary legends
+
+### ARTICLE 5: INTELLECTUAL PROPERTY
+
+This Software remains the exclusive intellectual property of Pinaki Chakraborty. All copyright, patent, trademark, and other intellectual property rights in and to the Software are retained by the Licensor.
+
+### ARTICLE 6: DISCLAIMER OF WARRANTIES
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│   THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,    │
+│   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES    │
+│   OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND          │
+│   NON-INFRINGEMENT.                                                │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### ARTICLE 7: LIMITATION OF LIABILITY
+
+In no event shall Pinaki Chakraborty be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of or in connection with this license or the use of the Software.
+
+### ARTICLE 8: TERMINATION
+
+This license is effective upon use and shall remain in effect until terminated. This license will terminate automatically and immediately if the Licensee:
+1. Violates any term or condition of this agreement
+2. Fails to preserve copyright notices
+3. Engages in any prohibited activity
+
+Upon termination, the Licensee must cease all use of the Software and destroy all copies in their possession.
+
+### ARTICLE 9: GOVERNING LAW
+
+This license shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in West Bengal, India.
+
+---
+
+## 📊 COMPLIANCE MATRIX
+
+| Activity | Allowed? |
+|----------|----------|
+| Use within ANSDB | ✅ Yes |
+| Educational research | ✅ Yes |
+| Internal modifications | ✅ Yes |
+| Share with other institutions | 🚫 No |
+| Commercial deployment | 🚫 No |
+| Open source release | 🚫 No |
+| Create forks | 🚫 No |
+| Resell or redistribute | 🚫 No |
+
+---
+
+## ⚠️ IMPORTANT NOTICE
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│   BY DOWNLOADING, INSTALLING, COPYING, OR OTHERWISE USING THIS     │
+│   SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTAND,       │
+│   AND AGREE TO BE BOUND BY ALL TERMS AND CONDITIONS OF THIS         │
+│   EDUCATIONAL CODE LICENSE.                                          │
+│                                                                     │
+│   IF YOU DO NOT AGREE WITH THESE TERMS, DO NOT USE THIS SOFTWARE.   │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📞 CONTACT
+
+For questions regarding this license or to request permission for uses beyond the scope of this agreement, please contact the Licensor through proper legal channels.
+
+---
+
+```
+╔══════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                      ║
+║                           © 2024 PINAKI CHAKRABORTY                                  ║
+║                               ALL RIGHTS RESERVED                                     ║
+║                                                                                      ║
+║                    This License Agreement is legally binding.                        ║
+║                                                                                      ║
+╚══════════════════════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 🏷️ LICENSE BADGES
+
+For use in documentation or other projects:
+
+```markdown
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
+[![License: Educational Use Only](https://img.shields.io/badge/Usage-Educational%20Only-blue.svg)](LICENSE)
+[![License: No Redistribution](https://img.shields.io/badge/Redistribution-Not%20Allowed-orange.svg)](LICENSE)
+```
+
+---
+
+**License Version:** 1.0  
+**Effective Date:** 2024  
+**License ID:** ANSDB-ECL-2024-001
