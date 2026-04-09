@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
+import MainLayout from '../layouts/MainLayout';
 
 // Eager load Home (it's the landing page - needs to be instant)
 import Home from '../pages/Home';
@@ -31,23 +32,31 @@ const PageLoader = () => (
   </div>
 );
 
+const PublicLayout = () => (
+  <MainLayout>
+    <Outlet />
+  </MainLayout>
+);
+
 const AppRoutes = () => {
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
-        {/* Public Website - Home is eager loaded */}
-        <Route path="/" element={<Home />} />
-        
-        {/* Lazy loaded public pages */}
-        <Route path="/about" element={<About />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/courses/:id" element={<CourseDetails />} />
-        <Route path="/secretary" element={<Secretary />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/notice" element={<Notice />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/login" element={<Login />} />
+        <Route element={<PublicLayout />}>
+          {/* Public Website - Home is eager loaded */}
+          <Route path="/" element={<Home />} />
+          
+          {/* Lazy loaded public pages */}
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:id" element={<CourseDetails />} />
+          <Route path="/secretary" element={<Secretary />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
 
         {/* Student Portal — MUST come BEFORE /erp/* to prevent wildcard matching */}
         <Route path="/student/login" element={<StudentLoginPage />} />

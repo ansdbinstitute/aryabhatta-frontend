@@ -13,7 +13,14 @@ export const getAppType = (hostname, searchParams = null) => {
     }
   }
   
-  if (domain === 'ansdb.org') return 'main';
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+
+  if (domain === 'ansdb.org' || domain === 'localhost' || domain === '127.0.0.1') {
+    if (pathname.startsWith('/erp')) return 'erp';
+    if (pathname.startsWith('/student')) return 'student';
+    return 'main';
+  }
+  
   if (domain === 'student.ansdb.org') return 'student';
   if (domain === 'ims.ansdb.org') return 'erp';
   
