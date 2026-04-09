@@ -11,7 +11,7 @@ const SecretaryMessage = () => {
             <img
               alt="Secretary ANSDB"
               className="rounded-lg shadow-2xl w-full"
-              src="/images/secretary.jpg"
+              src="/images/secretary.png"
             />
             <div className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-xl">
               <h4 className="font-bold text-primary">A. Ghosh</h4>
