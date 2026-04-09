@@ -16,7 +16,7 @@ export default defineConfig({
   },
   server: {
     host: true,
-    allowedHosts: ['ansdb.org'],
+    allowedHosts: true,
     proxy: {
       // Proxy all /api calls to Strapi — eliminates CORS issues in dev
       '/api': {
@@ -31,5 +31,9 @@ export default defineConfig({
         secure: false,
       },
     },
+  },
+  preview: {
+    allowedHosts: true,
+    host: true,
   },
 })
