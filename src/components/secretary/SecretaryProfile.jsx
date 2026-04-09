@@ -12,7 +12,7 @@ const SecretaryProfile = () => {
               <img 
                 className="h-full w-full object-cover" 
                 alt="Professional portrait of A. Ghosh in business suit" 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/images/secretary.jpg" 
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-xl shadow-xl">

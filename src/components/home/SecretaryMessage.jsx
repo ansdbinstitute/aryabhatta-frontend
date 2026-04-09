@@ -11,7 +11,7 @@ const SecretaryMessage = () => {
             <img
               alt="Secretary ANSDB"
               className="rounded-lg shadow-2xl w-full"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGni0fBjrHu1fTBOMitJKvddklubDVdVZfkKoUO0DR9NBPXuhdv6Se9tVPnICeXoKvi4tAVXra7VpNDl0keA5CA_yXA4TEh9W6Rp-yGL6WbP7FCkYpOV8uaOTPYUqUxL5ZEvom8V8G3yulqCnpwOFLb7KratmTtoK6XkLkZQfaYOtq6FxmECRiAGwRamtXyo0U_BLVX-IXD7c_h1ft1e7yXGWE8kXAdaZUGRQjY94EqYMOOpswBasxT-PgbVXxs6aTyT1uwdco3SI"
+              src="/images/secretary.jpg"
             />
             <div className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-xl">
               <h4 className="font-bold text-primary">A. Ghosh</h4>
