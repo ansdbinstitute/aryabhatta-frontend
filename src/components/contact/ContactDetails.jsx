@@ -42,7 +42,7 @@ const ContactDetails = () => {
       </div>
 
       {/* Quick Action Buttons */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-body">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-body">
         <a 
           href="https://wa.me/919046442337" 
           target="_blank" 
@@ -50,12 +50,6 @@ const ContactDetails = () => {
           className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-4 px-4 rounded-xl font-black text-sm hover:scale-105 transition-all shadow-lg shadow-green-500/20"
         >
           <MessageCircle className="w-5 h-5" /> WHATSAPP
-        </a>
-        <a 
-          href="tel:+919046442337" 
-          className="flex items-center justify-center gap-2 bg-primary text-white py-4 px-4 rounded-xl font-black text-sm hover:scale-105 transition-all shadow-lg shadow-primary/20"
-        >
-          <Phone className="w-5 h-5" /> CALL US
         </a>
         <a 
           href="mailto:info@ansdb.org" 

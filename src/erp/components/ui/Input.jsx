@@ -15,6 +15,8 @@ const Input = React.forwardRef(({
   className = '',
   id,
   required,
+  autoComplete = 'off',
+  autoCorrect = 'off',
   ...props
 }, ref) => {
   const inputId = id || `input-${label?.toLowerCase().replace(/\s+/g, '-')}`;
@@ -35,6 +37,8 @@ const Input = React.forwardRef(({
         <input
           ref={ref}
           id={inputId}
+          autoComplete={autoComplete}
+          autoCorrect={autoCorrect}
           className={classNames(
             'w-full rounded-lg border bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400',
             'transition-colors duration-200',

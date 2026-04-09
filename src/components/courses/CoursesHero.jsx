@@ -41,7 +41,7 @@ const CoursesHero = () => {
             <div className="absolute -inset-4 bg-accent/20 blur-xl rounded-full"></div>
             <img
               className="relative rounded-2xl border-4 border-accent/30 shadow-2xl object-cover w-full h-[400px]"
-              alt="Technical professional working with specialized equipment"
+              alt="Vocational training and computer centre learning at ANSDB in Bolpur"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuArZSxXDIHt5HlUzYhBMYDwMzWH7hViMQw3i0eaMq58Bx95heCjRogihTTgHn7S_ZoNh3Fa6pDH3yS9SMGheDNUXAwhvHLdpPIdkuCl_2aV69rh3VuESf-5WHQd7KBIUcKNYff6Pg_RIvupQZZU5J6mgk2RLo9pYpCo2Eiypz1BAusKs-dCq0w_WfnGcpkO7lwGmM_xRAD3Ml_3vHZX6zWX4wX1pKgm0bc6mkxcxCXEy-09NGRg06bgmzz0ufQfmWIuFUB73SOSlZE"
             />
           </div>
@@ -52,4 +52,3 @@ const CoursesHero = () => {
 };
 
 export default CoursesHero;
-

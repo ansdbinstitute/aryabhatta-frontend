@@ -17,16 +17,16 @@ import {
 import { Link } from 'react-router-dom';
 
 const StatCard = ({ icon: Icon, title, value, subtitle, color, path }) => (
-  <Link to={path} className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 hover:shadow-lg hover:border-slate-200 transition-all group overflow-hidden relative">
-    <div className={`absolute top-0 right-0 w-24 h-24 ${color} opacity-5 -mr-8 -mt-8 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500`} />
-    <div className="flex items-center gap-4">
-      <div className={`p-3.5 rounded-2xl ${color.replace('bg-', 'bg-opacity-10 ')} ${color.replace('bg-', 'text-')} transition-all group-hover:scale-110`}>
-        <Icon className="w-6 h-6" />
+  <Link to={path} className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 md:p-6 hover:shadow-lg hover:border-slate-200 transition-all group overflow-hidden relative">
+    <div className={`absolute top-0 right-0 w-20 h-20 ${color} opacity-5 -mr-6 -mt-6 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700`} />
+    <div className="flex items-center gap-3 md:gap-4">
+      <div className={`p-2.5 md:p-3.5 rounded-xl ${color.replace('bg-', 'bg-opacity-10 ')} ${color.replace('bg-', 'text-')} transition-all group-hover:scale-110`}>
+        <Icon className="w-5 md:w-6 h-5 md:h-6" />
       </div>
       <div>
-        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{title}</p>
-        <h3 className="text-2xl font-black text-slate-800 tracking-tight mt-1">{value}</h3>
-        <p className="text-[11px] font-bold text-slate-500 mt-0.5">{subtitle}</p>
+        <p className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest">{title}</p>
+        <h3 className="text-xl md:text-2xl font-black text-slate-800 tracking-tight mt-0.5 md:mt-1">{value}</h3>
+        <p className="text-[10px] md:text-[11px] font-bold text-slate-500 mt-0.5">{subtitle}</p>
       </div>
     </div>
   </Link>
@@ -114,30 +114,30 @@ const StudentDashboardPage = () => {
   }
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-700">
+    <div className="space-y-6 md:space-y-8 animate-in fade-in duration-700">
       {/* Welcome Banner */}
-      <div className="bg-indigo-600 rounded-[40px] px-8 py-10 lg:p-12 text-white relative overflow-hidden shadow-2xl shadow-indigo-900/20">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500 rounded-full -mr-32 -mt-32 blur-[100px] opacity-50" />
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+      <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-2xl md:rounded-3xl px-5 md:px-8 py-6 md:py-10 text-white relative overflow-hidden shadow-xl shadow-indigo-900/20">
+        <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-indigo-500/30 rounded-full -mr-16 md:-mr-32 -mt-16 md:-mt-32 blur-3xl" />
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6">
           <div className="max-w-2xl">
-            <h1 className="text-4xl lg:text-5xl font-black tracking-tight mb-4 leading-tight">
-              YOUR ACADEMIC <br />JOURNEY CONTINUES.
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight mb-2 md:mb-3 leading-tight">
+              Your Academic Journey Continues
             </h1>
-            <p className="text-indigo-100 text-sm font-bold opacity-80 uppercase tracking-widest flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
+            <p className="text-indigo-200 text-xs md:text-sm font-medium flex items-center gap-2">
+              <Calendar className="w-3.5 md:w-4 h-3.5 md:h-4" />
               {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
             </p>
           </div>
-          <div className="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-3xl shrink-0">
-            <p className="text-[10px] font-black text-indigo-200 uppercase tracking-widest mb-2">Primary Course</p>
-            <h3 className="text-lg font-black">{student?.course?.title || 'Not Enrolled'}</h3>
-            <p className="text-xs font-bold text-indigo-300 mt-1 opacity-70">Batch: {student?.batch?.name || 'Pending Assigned'}</p>
+          <div className="bg-white/10 backdrop-blur-md border border-white/10 p-4 md:p-5 rounded-xl md:rounded-2xl shrink-0">
+            <p className="text-[10px] md:text-[11px] font-bold text-indigo-200 uppercase tracking-widest mb-1">Primary Course</p>
+            <h3 className="text-base md:text-lg font-black">{student?.course?.title || 'Not Enrolled'}</h3>
+            <p className="text-xs font-medium text-indigo-300 mt-1 opacity-80">Batch: {student?.batch?.name || 'Pending'}</p>
           </div>
         </div>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
         <StatCard 
           icon={BookOpen} 
           title="Study Materials" 
@@ -172,67 +172,67 @@ const StudentDashboardPage = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
         {/* Official Announcements Section */}
-        <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-100 shadow-sm p-8">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-black text-slate-800 tracking-tight flex items-center gap-2 uppercase">
-              <Megaphone className="w-6 h-6 text-blue-600" />
-              Portal Announcements
+        <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-100 shadow-sm p-5 md:p-6 lg:p-8">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h3 className="text-lg md:text-xl font-black text-slate-800 tracking-tight flex items-center gap-2">
+              <Megaphone className="w-5 md:w-6 h-5 md:h-6 text-blue-600" />
+              Announcements
             </h3>
-            <span className="px-3 py-1 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-black text-slate-400 uppercase tracking-widest">
-              Live Feed
+            <span className="px-2.5 py-1 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-bold text-blue-600 uppercase tracking-widest">
+              Live
             </span>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-3">
             {dashboardData.notices.length === 0 ? (
-              <div className="py-20 text-center border-2 border-dashed border-slate-100 rounded-3xl">
-                 <Bell className="w-10 h-10 text-slate-200 mx-auto mb-2" />
-                 <p className="text-sm font-bold text-slate-400 uppercase tracking-widest">No Active Announcements</p>
+              <div className="py-10 md:py-16 text-center border-2 border-dashed border-slate-100 rounded-2xl">
+                 <Bell className="w-8 md:w-10 h-8 md:h-10 text-slate-200 mx-auto mb-2" />
+                 <p className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">No Active Announcements</p>
               </div>
             ) : (
               dashboardData.notices.map((item) => (
-                <div key={item.id} className="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-slate-100 transition-colors flex items-center justify-between p-5 group cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center font-black text-blue-600 text-[10px] uppercase shadow-inner text-center leading-none p-1 border border-slate-50">
+                <div key={item.id} className="p-3.5 md:p-4 rounded-xl bg-slate-50 border border-slate-100 hover:bg-blue-50 hover:border-blue-100 transition-colors flex items-center justify-between group cursor-pointer">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className="w-10 md:w-12 h-10 md:h-12 bg-white rounded-xl shadow-sm flex items-center justify-center font-bold text-blue-600 text-[10px] md:text-xs uppercase shadow-inner border border-slate-50">
                       {new Date(item.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800 tracking-tight group-hover:text-blue-600 transition-colors">{item.title}</h4>
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">{item.type || 'NOTICE'}</p>
+                      <h4 className="font-bold text-slate-700 md:text-slate-800 text-sm md:text-base group-hover:text-blue-600 transition-colors">{item.title}</h4>
+                      <p className="text-[9px] md:text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">{item.type || 'NOTICE'}</p>
                     </div>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-blue-600 transition-colors group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5 text-slate-300 group-hover:text-blue-600 transition-colors group-hover:translate-x-1" />
                 </div>
               ))
             )}
           </div>
         </div>
 
-        {/* Quick Links / Resources */}
-        <div className="bg-slate-900 rounded-3xl p-8 text-white flex flex-col justify-between overflow-hidden relative group">
-          <div className="absolute -bottom-4 -right-4 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+        {/* Quick Actions */}
+        <div className="bg-slate-900 rounded-2xl p-5 md:p-6 text-white flex flex-col justify-between overflow-hidden relative group">
+          <div className="absolute -bottom-8 -right-8 w-24 md:w-32 h-24 md:h-32 bg-blue-600/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
           <div className="relative z-10">
-            <h3 className="text-xl font-black tracking-tight mb-6 uppercase tracking-wider">QUICK ACTIONS</h3>
-            <div className="space-y-4">
-              <Link to="/student/id-card" className="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-blue-600 transition-all font-bold text-sm tracking-tight group/btn shadow-inner">
-                View & Download ID Card
+            <h3 className="text-base md:text-lg font-black tracking-tight mb-4 md:mb-5 uppercase">Quick Actions</h3>
+            <div className="space-y-2.5 md:space-y-3">
+              <Link to="/student/id-card" className="w-full flex items-center justify-between p-3 md:p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-blue-600 transition-all font-medium text-xs md:text-sm tracking-tight group/btn">
+                <span>View ID Card</span>
                 <Fingerprint className="w-4 h-4 text-blue-400 group-hover/btn:text-white transition-colors" />
               </Link>
-              <Link to="/student/payments" className="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-blue-600 transition-all font-bold text-sm tracking-tight group/btn shadow-inner">
-                Recent Payment Slips
+              <Link to="/student/payments" className="w-full flex items-center justify-between p-3 md:p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-blue-600 transition-all font-medium text-xs md:text-sm tracking-tight group/btn">
+                <span>Payment History</span>
                 <CreditCard className="w-4 h-4 text-emerald-400 group-hover/btn:text-white transition-colors" />
               </Link>
-              <Link to="/student/materials" className="w-full flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-blue-600 transition-all font-bold text-sm tracking-tight group/btn shadow-inner">
-                Internal Study Resources
+              <Link to="/student/materials" className="w-full flex items-center justify-between p-3 md:p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-blue-600 transition-all font-medium text-xs md:text-sm tracking-tight group/btn">
+                <span>Study Resources</span>
                 <BookOpen className="w-4 h-4 text-amber-400 group-hover/btn:text-white transition-colors" />
               </Link>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-white/10 relative z-10">
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Authenticated As</p>
-            <p className="font-black text-sm tracking-tight text-blue-400">{student?.uid || 'STUDENT_UID'}</p>
+          <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-white/10 relative z-10">
+            <p className="text-[9px] md:text-[10px] font-medium text-slate-500 uppercase tracking-widest mb-1">Logged in as</p>
+            <p className="font-bold text-xs md:text-sm tracking-tight text-blue-400">{student?.uid || 'STUDENT_ID'}</p>
           </div>
         </div>
       </div>

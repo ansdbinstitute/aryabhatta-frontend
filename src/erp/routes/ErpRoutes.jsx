@@ -62,6 +62,9 @@ const PlacementTestimonialsPage = lazy(() => import('../pages/placements/Placeme
 const TestimonialFormPage = lazy(() => import('../pages/placements/TestimonialFormPage'));
 const UserProfilePage = lazy(() => import('../pages/profile/UserProfilePage'));
 
+// Initialize auth on module load
+useAuthStore.getState().initialize();
+
 // Loading fallback
 const PageLoader = ({ message = 'Loading...' }) => (
   <div className="flex flex-col items-center justify-center min-h-screen bg-erp-bg">
@@ -180,10 +183,10 @@ const ErpRoutes = () => {
           <Route path="courses/:id/edit" element={<PermissionRoute resource="courses" action="update"><CourseFormPage /></PermissionRoute>} />
 
           {/* Staff */}
-          <Route path="staff" element={<PermissionRoute resource="staff" roles={[ROLES.INSTITUTE_ADMIN, ROLES.BRANCH_ADMIN]}><StaffListPage /></PermissionRoute>} />
-          <Route path="staff/new" element={<PermissionRoute resource="staff" action="create" roles={[ROLES.INSTITUTE_ADMIN, ROLES.BRANCH_ADMIN]}><StaffFormPage /></PermissionRoute>} />
-          <Route path="staff/:id" element={<PermissionRoute resource="staff" roles={[ROLES.INSTITUTE_ADMIN, ROLES.BRANCH_ADMIN]}><StaffDetailPage /></PermissionRoute>} />
-          <Route path="staff/:id/edit" element={<PermissionRoute resource="staff" action="update" roles={[ROLES.INSTITUTE_ADMIN, ROLES.BRANCH_ADMIN]}><StaffFormPage /></PermissionRoute>} />
+          <Route path="staff" element={<PermissionRoute resource="staff" roles={[ROLES.INSTITUTE_ADMIN]}><StaffListPage /></PermissionRoute>} />
+          <Route path="staff/new" element={<PermissionRoute resource="staff" action="create" roles={[ROLES.INSTITUTE_ADMIN]}><StaffFormPage /></PermissionRoute>} />
+          <Route path="staff/:id" element={<PermissionRoute resource="staff" roles={[ROLES.INSTITUTE_ADMIN]}><StaffDetailPage /></PermissionRoute>} />
+          <Route path="staff/:id/edit" element={<PermissionRoute resource="staff" action="update" roles={[ROLES.INSTITUTE_ADMIN]}><StaffFormPage /></PermissionRoute>} />
 
           {/* Campus Network */}
           <Route path="branches" element={<PermissionRoute resource="campus-network" roles={[ROLES.INSTITUTE_ADMIN]}><BranchManagementPage /></PermissionRoute>} />
@@ -239,7 +242,7 @@ const ErpRoutes = () => {
           <Route path="placements/testimonials/:id/edit" element={<PermissionRoute resource="placements" action="update" roles={[ROLES.INSTITUTE_ADMIN]}><TestimonialFormPage /></PermissionRoute>} />
 
           {/* Users */}
-          <Route path="users" element={<RoleRoute roles={[ROLES.INSTITUTE_ADMIN, ROLES.BRANCH_ADMIN]}><PermissionRoute resource="users"><UserManagementPage /></PermissionRoute></RoleRoute>} />
+          <Route path="users" element={<RoleRoute roles={[ROLES.INSTITUTE_ADMIN]}><PermissionRoute resource="users"><UserManagementPage /></PermissionRoute></RoleRoute>} />
           <Route path="users/permissions" element={<RoleRoute roles={[ROLES.INSTITUTE_ADMIN]}><PermissionRoute resource="access-matrix"><RolePermissionsPage /></PermissionRoute></RoleRoute>} />
 
           {/* Profile */}

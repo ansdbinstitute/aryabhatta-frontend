@@ -6,7 +6,6 @@ const courses = [
   {
     id: 1,
     title: 'Mobile Repairing',
-    duration: '6 Months',
     description: 'Master chip-level repairing, software troubleshooting, and hardware replacements for all major smartphone brands.',
     image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800&auto=format&fit=crop',
     features: ['Chip-level Motherboard Repair', 'Software Flashing & Unlocking', 'Glass & Display Replacement'],
@@ -14,7 +13,6 @@ const courses = [
   {
     id: 2,
     title: 'Web Development',
-    duration: '12 Months',
     description: 'Learn to build dynamic websites and web applications from scratch using modern frameworks and technologies.',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
     features: ['HTML, CSS & JavaScript', 'React.js & Node.js Mastery', 'Database Management'],
@@ -22,7 +20,6 @@ const courses = [
   {
     id: 3,
     title: 'R.A.C.W. Repairing',
-    duration: '4 Months',
     description: 'Comprehensive hands-on training for domestic and commercial refrigeration and air conditioning systems.',
     image: '/images/racw_repair.png',
     features: ['Compressor Repair & Testing', 'Gas Charging & Leak Detection', 'Inverter AC Technology'],
@@ -31,30 +28,27 @@ const courses = [
 
 const CoursesSection = () => {
   return (
-    <section className="py-20 px-4 md:px-10" style={{ backgroundColor: '#EEF4FF' }}>
+    <section className="py-12 md:py-20 px-4 md:px-8" style={{ backgroundColor: '#EEF4FF' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-primary text-4xl font-display font-bold">Our Professional Courses</h2>
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-primary text-2xl md:text-3xl lg:text-4xl font-display font-bold">Our Professional Courses</h2>
           <div className="w-24 h-1 bg-accent mx-auto mt-4"></div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {courses.map((course) => (
             <div
               key={course.id}
               className="bg-white rounded-lg shadow-xl overflow-hidden transition hover:-translate-y-2 border border-slate-100"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 md:h-48 overflow-hidden">
                 <img
                   src={course.image}
-                  alt={course.title}
+                  alt={`${course.title} vocational training course at ANSDB in Bolpur`}
                   className="w-full h-full object-cover"
                   loading="lazy"
                   onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800'; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <div className="absolute top-3 right-3 bg-accent text-primary text-xs font-black px-3 py-1 rounded-full uppercase">
-                  {course.duration}
-                </div>
                 <h3 className="absolute bottom-3 left-4 right-4 text-white text-xl font-bold">
                   {course.title}
                 </h3>

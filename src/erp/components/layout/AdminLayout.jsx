@@ -17,7 +17,7 @@ const AdminLayout = () => {
   }, []);
 
   return (
-    <div className="flex h-screen bg-erp-bg overflow-hidden font-erp">
+    <div className="flex h-screen bg-erp-bg overflow-hidden font-erp w-full">
       {/* Mobile overlay */}
       {sidebarMobileOpen && (
         <div
@@ -31,7 +31,7 @@ const AdminLayout = () => {
 
       {/* Main Content Area */}
       <div
-        className="flex-1 flex flex-col min-w-0 transition-all duration-300"
+        className="flex-1 flex flex-col min-w-0 transition-all duration-300 w-full"
         style={{
           marginLeft: sidebarCollapsed ? '72px' : '260px',
         }}
@@ -39,7 +39,7 @@ const AdminLayout = () => {
         <TopBar />
 
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-6">
           <Outlet />
         </main>
       </div>

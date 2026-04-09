@@ -48,11 +48,113 @@ const StudentPaymentsPage = () => {
 
   if (studentLoading || isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="w-12 h-12 rounded-full border-4 border-slate-100 border-t-blue-600 animate-spin" />
+      <div className="flex items-center justify-center min-h-[300px] md:min-h-[400px]">
+        <div className="w-10 md:w-12 h-10 md:h-12 rounded-full border-3 border-slate-100 border-t-blue-600 animate-spin" />
       </div>
     );
   }
+
+  const totalPaid = payments.reduce((acc, p) => acc + (parseFloat(p.amount) || 0), 0);
+  const pending = payments.filter(p => p.status === 'pending' || p.status === 'partial').length;
+
+  return (
+    <div className="space-y-6 md:space-y-8">
+      {/* Summary Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 md:p-6">
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="p-2.5 md:p-3 bg-emerald-50 text-emerald-600 rounded-xl">
+              <Wallet className="w-5 md:w-6 h-5 md:h-6" />
+            </div>
+            <div>
+              <p className="text-[10px] md:text-[11px] font-medium text-slate-400 uppercase tracking-wider">Total Paid</p>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800">₹{totalPaid.toLocaleString()}</h3>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 md:p-6">
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="p-2.5 md:p-3 bg-amber-50 text-amber-600 rounded-xl">
+              <CreditCard className="w-5 md:w-6 h-5 md:h-6" />
+            </div>
+            <div>
+              <p className="text-[10px] md:text-[11px] font-medium text-slate-400 uppercase tracking-wider">Pending</p>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800">{pending}</h3>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 md:p-6">
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="p-2.5 md:p-3 bg-blue-50 text-blue-600 rounded-xl">
+              <Receipt className="w-5 md:w-6 h-5 md:h-6" />
+            </div>
+            <div>
+              <p className="text-[10px] md:text-[11px] font-medium text-slate-400 uppercase tracking-wider">Transactions</p>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800">{payments.length}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Payment History */}
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+        <div className="px-5 md:px-6 py-4 md:py-5 border-b border-slate-50">
+          <h3 className="text-lg md:text-xl font-bold text-slate-800">Payment History</h3>
+        </div>
+        {payments.length === 0 ? (
+          <div className="p-10 md:p-16 text-center">
+            <Receipt className="w-10 md:w-12 h-10 md:h-12 text-slate-200 mx-auto mb-3" />
+            <p className="text-sm font-medium text-slate-400">No payment records found</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-slate-50 border-b border-slate-100">
+                <tr>
+                  <th className="px-4 md:px-6 py-3 text-left text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Date</th>
+                  <th className="px-4 md:px-6 py-3 text-left text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Amount</th>
+                  <th className="px-4 md:px-6 py-3 text-left text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Mode</th>
+                  <th className="px-4 md:px-6 py-3 text-left text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Status</th>
+                  <th className="px-4 md:px-6 py-3 text-left text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Receipt</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-50">
+                {payments.map((payment) => (
+                  <tr key={payment.id} className="hover:bg-slate-50 transition-colors">
+                    <td className="px-4 md:px-6 py-3 md:py-4">
+                      <p className="text-xs md:text-sm font-bold text-slate-700">{payment.paymentDate ? format(new Date(payment.paymentDate), 'dd MMM yyyy') : '-'}</p>
+                    </td>
+                    <td className="px-4 md:px-6 py-3 md:py-4">
+                      <p className="text-sm md:text-base font-black text-slate-800">₹{parseFloat(payment.amount || 0).toLocaleString()}</p>
+                    </td>
+                    <td className="px-4 md:px-6 py-3 md:py-4">
+                      <span className="text-xs md:text-sm font-medium text-slate-600">{payment.paymentMode || 'Online'}</span>
+                    </td>
+                    <td className="px-4 md:px-6 py-3 md:py-4">
+                      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] md:text-xs font-medium ${
+                        payment.status === 'completed' ? 'bg-emerald-50 text-emerald-600' :
+                        payment.status === 'pending' ? 'bg-amber-50 text-amber-600' :
+                        'bg-slate-50 text-slate-500'
+                      }`}>
+                        {payment.status || 'completed'}
+                      </span>
+                    </td>
+                    <td className="px-4 md:px-6 py-3 md:py-4">
+                      {payment.paymentSlip?.url && (
+                        <a href={getMediaUrl(payment.paymentSlip)} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">
+                          <Download className="w-4 md:w-5 h-4 md:h-5" />
+                        </a>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+    );
 
   return (
     <div className="space-y-10 pb-12">

@@ -9,7 +9,6 @@ import Home from '../pages/Home';
 const About = lazy(() => import('../pages/About'));
 const Courses = lazy(() => import('../pages/Courses'));
 const CourseDetails = lazy(() => import('../pages/CourseDetails'));
-const Admission = lazy(() => import('../pages/Admission'));
 const Secretary = lazy(() => import('../pages/Secretary'));
 const Contact = lazy(() => import('../pages/Contact'));
 const Gallery = lazy(() => import('../pages/Gallery'));
@@ -43,7 +42,6 @@ const AppRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/courses/:id" element={<CourseDetails />} />
-        <Route path="/admission" element={<Admission />} />
         <Route path="/secretary" element={<Secretary />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/notice" element={<Notice />} />

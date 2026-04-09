@@ -58,6 +58,12 @@
     font-family: var(--font-body);
     scroll-behavior: smooth;
   }
+  
+  /* Responsive base font sizes */
+  @media (max-width: 640px) {
+    html { font-size: 14px; }
+  }
+  
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     letter-spacing: -0.025em;
@@ -96,6 +102,11 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  top: 0 !important;
 }
 
 .sticky-header {

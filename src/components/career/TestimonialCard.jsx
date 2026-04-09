@@ -12,7 +12,7 @@ const TestimonialCard = ({ testimonial, index }) => {
   };
 
   const profilePhoto = student?.profileImage ? getPhotoUrl(student.profileImage) : null;
-  const studentName = student?.name || 'Anonymous';
+  const studentName = [student?.firstName, student?.lastName].filter(Boolean).join(' ') || student?.name || 'Anonymous';
   const courseName = course?.name || course?.title || '';
   const batchName = batch?.name || '';
   const location = student?.address?.city || student?.branch?.name || '';

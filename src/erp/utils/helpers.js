@@ -1,7 +1,7 @@
 import { format, formatDistanceToNow, parseISO, isValid } from 'date-fns';
 
 export const getApiBaseUrl = () =>
-  import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+  import.meta.env.VITE_STRAPI_URL || '';
 
 export const MAX_UPLOAD_SIZE_BYTES = 10 * 1024 * 1024;
 export const PDF_MIME_TYPES = ['application/pdf'];

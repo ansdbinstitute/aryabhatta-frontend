@@ -62,22 +62,22 @@ const StudentResultsPage = () => {
     : 0;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-6 md:space-y-8">
       {/* Header with Performance Summary */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 md:gap-6">
         <div>
-          <h2 className="text-3xl font-black text-slate-800 tracking-tight flex items-center gap-3">
-             <Award className="w-8 h-8 text-blue-600" />
-             ACADEMIC PERFORMANCE
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-800 flex items-center gap-2 md:gap-3">
+             <Award className="w-6 md:w-7 lg:w-8 h-6 md:h-7 lg:h-8 text-blue-600" />
+             Academic Performance
           </h2>
-          <p className="text-slate-500 font-bold text-xs uppercase tracking-widest mt-1 opacity-70">
-            Student: <span className="text-blue-600 underline underline-offset-4 decoration-blue-200">{student?.uid}</span>
+          <p className="text-slate-500 font-medium text-xs md:text-sm mt-1 md:mt-2">
+            Student: <span className="text-blue-600 underline decoration-blue-200">{student?.uid}</span>
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4">
-           <div className="bg-emerald-50 border border-emerald-100 px-6 py-3 rounded-2xl flex items-center gap-3 group">
-              <div className="p-2.5 bg-emerald-500 text-white rounded-xl shadow-lg shadow-emerald-200 group-hover:scale-110 transition-transform">
+        <div className="flex flex-wrap items-center gap-3 md:gap-4">
+           <div className="bg-emerald-50 border border-emerald-100 px-4 md:px-5 py-2 md:py-3 rounded-xl flex items-center gap-2 md:gap-3 group">
+               <div className="p-1.5 md:p-2 bg-emerald-500 text-white rounded-lg shadow-md group-hover:scale-110 transition-transform">
                  <Trophy className="w-5 h-5" />
               </div>
               <div>

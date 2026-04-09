@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import usePlacementStore from '../../stores/placementStore';
 import PageHeader from '../../components/common/PageHeader';
-import { Building2, Plus, Trash2, Eye, EyeOff, Edit2, Star, ExternalLink } from 'lucide-react';
+import { Building2, Plus, Trash2, Eye, EyeOff, Edit2, ExternalLink, Star } from 'lucide-react';
 
 const PlacementPartnersPage = () => {
   const { partners, fetchPartners, deletePartner, isLoading } = usePlacementStore();
+  const [addingDemo, setAddingDemo] = useState(false);
 
   useEffect(() => {
     fetchPartners();
@@ -29,6 +30,52 @@ const PlacementPartnersPage = () => {
     });
   };
 
+  const addDemoPartners = async () => {
+    const demoPartners = [
+      { name: 'Samsung', file: 'samsung.png', website: 'https://www.samsung.com', order: 1 },
+      { name: 'Xiaomi', file: 'xiaomi.png', website: 'https://www.xiaomi.com', order: 2 },
+      { name: 'OPPO', file: 'oppo.png', website: 'https://www.oppo.com', order: 3 },
+      { name: 'Sony', file: 'sony.png', website: 'https://www.sony.co.in', order: 4 },
+      { name: 'Indus Net Technologies', file: 'indus-net.png', website: 'https://indusnettech.com', order: 5 },
+      { name: 'Khosla Electronics', file: 'khosla.png', website: 'https://khoslaelectronics.com', order: 6 },
+      { name: 'Maity Innovations', file: 'maity.png', website: '', order: 7 },
+      { name: 'Syscentric', file: 'syscentric.png', website: '', order: 8 },
+    ];
+
+    setAddingDemo(true);
+    const token = localStorage.getItem('erp_token') || localStorage.getItem('token');
+
+    for (const p of demoPartners) {
+      try {
+        const blob = await fetch(`/images/partners/${p.file}`).then(r => r.blob());
+        const file = new File([blob], p.file, { type: 'image/png' });
+        const formData = new FormData();
+        formData.append('files', file);
+
+        const upload = await fetch('/api/upload', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${token}` },
+          body: formData
+        });
+        const uploadData = await upload.json();
+        const imageId = uploadData[0]?.id;
+        if (!imageId) throw new Error('Upload failed');
+
+        await fetch('/api/placement-partners', {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: { companyName: p.name, website: p.website, displayOrder: p.order, isActive: true, logo: imageId } })
+        });
+      } catch (err) {
+        console.error(`Error: ${p.name}`, err);
+      }
+    }
+
+    setAddingDemo(false);
+    fetchPartners();
+    alert('Demo partners added!');
+  };
+
   return (
     <div className="max-w-7xl mx-auto pb-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
@@ -36,13 +83,25 @@ const PlacementPartnersPage = () => {
           title="Placement Partners"
           subtitle="Manage companies that hire our students for placements."
         />
-        <Link 
-          to="/erp/placements/partners/new"
-          className="flex items-center gap-2 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors shadow-sm"
-        >
-          <Plus className="w-5 h-5" />
-          Add Partner
-        </Link>
+        <div className="flex gap-3">
+          {partners.length === 0 && (
+            <button
+              onClick={addDemoPartners}
+              disabled={addingDemo}
+              className="flex items-center gap-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl transition-colors shadow-sm disabled:opacity-50"
+            >
+              {addingDemo ? <Star className="w-5 h-5 animate-spin" /> : <Star className="w-5 h-5" />}
+              Add Demo Partners
+            </button>
+          )}
+          <Link 
+            to="/erp/placements/partners/new"
+            className="flex items-center gap-2 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors shadow-sm"
+          >
+            <Plus className="w-5 h-5" />
+            Add Partner
+          </Link>
+        </div>
       </div>
 
       {isLoading && partners.length === 0 ? (
@@ -87,7 +146,7 @@ const PlacementPartnersPage = () => {
                         <div>
                           <p className="font-semibold text-slate-800">{partner.companyName}</p>
                           {partner.description && (
-                            <p className="text-xs text-slate-400 line-clamp-1">{partner.description}</p>
+                            <p className="text-xs text-slate-500 mt-0.5">{partner.description}</p>
                           )}
                         </div>
                       </div>
@@ -98,41 +157,32 @@ const PlacementPartnersPage = () => {
                           href={partner.website} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                          className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 hover:underline"
                         >
-                          Visit <ExternalLink className="w-3 h-3" />
+                          Visit Website
+                          <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       ) : (
-                        <span className="text-sm text-slate-400">-</span>
+                        <span className="text-sm text-slate-400">—</span>
                       )}
                     </td>
                     <td className="px-6 py-4">
-                      <span className="text-sm font-medium text-slate-600">
-                        {partner.displayOrder || 0}
-                      </span>
+                      <span className="text-sm font-medium text-slate-600">{partner.displayOrder || 0}</span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold ${
+                      <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${
                         partner.isActive 
-                          ? 'bg-emerald-50 text-emerald-700' 
+                          ? 'bg-emerald-100 text-emerald-700' 
                           : 'bg-slate-100 text-slate-500'
                       }`}>
-                        {partner.isActive ? (
-                          <><Eye className="w-3 h-3" /> Active</>
-                        ) : (
-                          <><EyeOff className="w-3 h-3" /> Hidden</>
-                        )}
+                        {partner.isActive ? 'Active' : 'Inactive'}
                       </span>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-end gap-2">
                         <button
                           onClick={() => toggleActive(partner)}
-                          className={`p-2 rounded-lg transition-colors ${
-                            partner.isActive
-                              ? 'text-slate-400 hover:text-amber-600 hover:bg-amber-50'
-                              : 'text-slate-400 hover:text-emerald-600 hover:bg-emerald-50'
-                          }`}
+                          className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                           title={partner.isActive ? 'Hide' : 'Show'}
                         >
                           {partner.isActive ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}

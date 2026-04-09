@@ -3,6 +3,7 @@ import placementApi from '../utils/placementApi';
 import PlacementHero from '../components/career/PlacementHero';
 import PartnerCompanies from '../components/career/PartnerCompanies';
 import TestimonialsGrid from '../components/career/TestimonialsGrid';
+import Seo from '../components/common/Seo';
 
 const Career = () => {
   const [partners, setPartners] = useState([]);
@@ -42,6 +43,17 @@ const Career = () => {
 
   return (
     <div className="bg-background-light min-h-screen font-body text-slate-900">
+      <Seo
+        title="ANSDB Placements in Bolpur | Career Support"
+        description="Explore ANSDB placement support, hiring partners, and student success stories from a leading vocational training institute in Bolpur."
+        path="/career"
+        keywords={[
+          'ANSDB',
+          'Aryabhatta National Skill Development Board',
+          'vocational training in Bolpur',
+          'best institute in Bolpur',
+        ]}
+      />
       <PlacementHero />
       
       {isLoading ? (
@@ -50,19 +62,17 @@ const Career = () => {
         </div>
       ) : (
         <>
-          {partners.length > 0 && (
-            <PartnerCompanies 
-              partners={partners} 
-              scrollRef={partnersRef} 
-              onScroll={scrollPartners} 
-            />
-          )}
+          <PartnerCompanies 
+            partners={partners} 
+            scrollRef={partnersRef} 
+            onScroll={scrollPartners} 
+          />
           
           {testimonials.length > 0 && (
             <TestimonialsGrid testimonials={testimonials} />
           )}
           
-          {partners.length === 0 && testimonials.length === 0 && (
+          {testimonials.length === 0 && (
             <div className="text-center py-20">
               <p className="text-slate-500 text-lg">Placement information coming soon.</p>
             </div>

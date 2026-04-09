@@ -6,10 +6,27 @@ import VisionMission from '../components/about/VisionMission';
 import CoreValues from '../components/about/CoreValues';
 import SecretaryLeadership from '../components/about/SecretaryLeadership';
 import AccreditationsAbout from '../components/about/AccreditationsAbout';
+import Seo from '../components/common/Seo';
 
 const About = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark min-h-screen font-body text-slate-900 dark:text-slate-100">
+      <Seo
+        title="Best Institute in Bolpur | About ANSDB"
+        description="Learn why ANSDB is trusted as one of the best institutes in Bolpur for skill development, vocational education, and student career growth."
+        path="/about"
+        keywords={[
+          'Aryabhatta National Skill Development Board',
+          'ANSDB',
+          'best institute in Bolpur',
+          'skill development institute in Bolpur',
+          'vocational training in Bolpur',
+          'computer centre in Bolpur',
+          'best skill development institute',
+          'Bolpur training institute',
+          'career focused education Bolpur',
+        ]}
+      />
       {/* HERO SECTION */}
       <section className="relative bg-gradient-to-r from-primary to-secondary py-12 md:py-16 px-6 md:px-20 overflow-hidden">
         <div className="absolute inset-0 diagonal-pattern opacity-30"></div>

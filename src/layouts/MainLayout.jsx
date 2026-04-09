@@ -5,9 +5,9 @@ import WhatsAppButton from '../components/common/WhatsAppButton';
 
 const MainLayout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen font-sans">
+    <div className="flex flex-col min-h-screen font-sans w-full overflow-x-hidden">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow w-full">
         {children}
       </main>
       <Footer />

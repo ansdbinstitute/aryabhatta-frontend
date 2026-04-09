@@ -71,9 +71,6 @@ const FALLBACK_PERMISSIONS = {
     'fee-structures': ['read'],
     payments: ['read'],
     notices: ['read'],
-    staff: ['read'],
-    users: ['read'],
-    'campus-network': ['read'],
     settings: ['read'],
     dashboard: ['read'],
   },
@@ -300,7 +297,7 @@ export const getSidebarConfig = () => [
   {
     label: 'Staff Management',
     icon: Users,
-    roles: [ROLES.INSTITUTE_ADMIN, ROLES.BRANCH_ADMIN],
+    roles: [ROLES.INSTITUTE_ADMIN],
     children: [
       { label: 'Staff Directory', path: '/erp/staff', resource: 'staff', action: 'read' },
       { label: 'User Accounts', path: '/erp/users', resource: 'users', action: 'read' },

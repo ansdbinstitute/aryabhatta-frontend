@@ -107,7 +107,13 @@ const LoginPage = ({
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form 
+            onSubmit={handleSubmit} 
+            autoComplete="off" 
+            autoCorrect="off" 
+            spellCheck="off" 
+            className="space-y-4"
+          >
             <Input
               label={portal === 'student' ? 'Student UID' : 'Email or Username'}
               icon="person"
@@ -116,8 +122,10 @@ const LoginPage = ({
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
               required
-              autoFocus
+              autoFocus={false}
               disabled={isLoading}
+              autoComplete="off"
+              autoCorrect="off"
             />
 
             <div className="relative">
@@ -130,6 +138,8 @@ const LoginPage = ({
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 disabled={isLoading}
+                autoComplete="off"
+                autoCorrect="off"
               />
               <button
                 type="button"

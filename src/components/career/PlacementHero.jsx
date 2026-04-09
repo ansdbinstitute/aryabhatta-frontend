@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, TrendingUp, Users, Award } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 
 const PlacementHero = () => {
   return (
@@ -25,37 +25,6 @@ const PlacementHero = () => {
             We bridge the gap between talent and opportunity. Our strong industry partnerships 
             and dedicated placement support ensure our students kickstart their careers with confidence.
           </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-            <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-              <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-white">500+</div>
-              <div className="text-sm text-white/70">Placements</div>
-            </div>
-            <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-              <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-white">50+</div>
-              <div className="text-sm text-white/70">Hiring Partners</div>
-            </div>
-            <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-              <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
-                <Award className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-white">95%</div>
-              <div className="text-sm text-white/70">Success Rate</div>
-            </div>
-            <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-              <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
-                <Briefcase className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-white">100%</div>
-              <div className="text-sm text-white/70">Support</div>
-            </div>
-          </div>
         </div>
       </div>
       

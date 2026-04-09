@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { getApiBaseUrl } from '../erp/utils/helpers';
 
-const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || '';
+const STRAPI_URL = getApiBaseUrl();
 
 const placementApi = {
   getPartners: async () => {
@@ -25,7 +26,7 @@ const placementApi = {
         params: {
           filters: { isActive: true },
           sort: ['displayOrder:asc', 'createdAt:desc'],
-          populate: ['student', 'student.profileImage', 'course', 'batch']
+          populate: '*'
         }
       });
       return response.data;

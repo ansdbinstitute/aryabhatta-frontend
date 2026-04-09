@@ -18,26 +18,26 @@ import { getFullName, getMediaUrl } from '../../erp/utils/helpers';
 import { format } from 'date-fns';
 
 const InfoCard = ({ icon: Icon, title, children }) => (
-  <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-    <div className="px-8 py-5 border-b border-slate-50 bg-slate-50/30 flex items-center gap-3">
-      <div className="p-2 rounded-xl bg-blue-50 text-blue-600">
-        <Icon className="w-5 h-5" />
+  <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
+    <div className="px-5 md:px-6 py-4 border-b border-slate-50 bg-slate-50/30 flex items-center gap-3">
+      <div className="p-2 rounded-lg bg-blue-50 text-blue-600">
+        <Icon className="w-4.5 h-4.5" />
       </div>
-      <h3 className="font-black text-slate-800 text-sm uppercase tracking-wider">{title}</h3>
+      <h3 className="font-bold text-slate-800 text-sm uppercase tracking-wide">{title}</h3>
     </div>
-    <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 flex-1">
+    <div className="p-5 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8 flex-1">
       {children}
     </div>
   </div>
 );
 
 const Detail = ({ label, value, icon: Icon }) => (
-  <div className="space-y-1.5">
-    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
+  <div className="space-y-1">
+    <p className="text-[9px] md:text-[10px] font-medium text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
       {Icon && <Icon className="w-3 h-3" />}
       {label}
     </p>
-    <p className="text-sm font-black text-slate-700 tracking-tight">{value || 'N/A'}</p>
+    <p className="text-sm font-bold text-slate-700">{value || 'N/A'}</p>
   </div>
 );
 
@@ -73,31 +73,31 @@ const StudentProfilePage = () => {
   const registrationYear = student.enrollmentDate ? format(new Date(student.enrollmentDate), 'yyyy') : 'N/A';
 
   return (
-    <div className="space-y-8 pb-12">
+    <div className="space-y-6 md:space-y-8 pb-10">
       {/* Hero Header Card */}
-      <div className="bg-white rounded-[40px] border border-slate-100 shadow-sm p-8 lg:p-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50/50 rounded-full -mr-48 -mt-48 blur-3xl -z-10" />
+      <div className="bg-white rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm p-5 md:p-6 lg:p-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-blue-50/50 rounded-full -mr-16 md:-mr-24 -mt-16 md:-mt-24 blur-2xl -z-10" />
         
-        <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-5 md:gap-6 lg:gap-8">
           {/* Avatar Section */}
           <div className="relative group">
-            <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-[48px] bg-slate-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-500 ring-1 ring-slate-100">
+            <div className="w-28 md:w-32 lg:w-40 h-28 md:h-32 lg:h-40 rounded-2xl md:rounded-3xl bg-slate-100 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300 ring-1 ring-slate-100">
               {profileImageUrl ? (
                 <img src={profileImageUrl} alt={fullName} className="w-full h-full object-cover" />
               ) : (
-                <span className="text-4xl font-black text-slate-300">
+                <span className="text-3xl md:text-4xl font-black text-slate-300">
                   {student.firstName?.[0]}{student.lastName?.[0]}
                 </span>
               )}
             </div>
-            <div className="absolute bottom-4 right-4 w-6 h-6 bg-emerald-500 border-4 border-white rounded-full shadow-lg" />
+            <div className="absolute bottom-2 md:bottom-3 right-2 md:right-3 w-4 md:w-5 h-4 md:h-5 bg-emerald-500 border-3 md:border-4 border-white rounded-full shadow-md" />
           </div>
 
           {/* Identity Section */}
           <div className="text-center md:text-left flex-1">
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-4">
-              <h1 className="text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">{fullName}</h1>
-              <div className="px-4 py-1.5 bg-emerald-50 text-emerald-600 text-xs font-black rounded-full border border-emerald-100 uppercase tracking-widest shadow-sm">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-4 mb-3 md:mb-4">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900">{fullName}</h1>
+              <div className="px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-full border border-emerald-100 uppercase tracking-widest shadow-sm">
                 Active
               </div>
             </div>

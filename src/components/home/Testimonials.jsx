@@ -97,9 +97,9 @@ const Testimonials = () => {
                 {testimonials.map((testimonial, i) => {
                   const student = testimonial.student || {};
                   const profilePhoto = student.profileImage ? getPhotoUrl(student.profileImage) : null;
-                  const studentName = student.name || 'Anonymous';
-                  const courseName = student.course?.name || student.course?.title || '';
-                  const batchName = student.batch?.name || '';
+                  const studentName = [student.firstName, student.lastName].filter(Boolean).join(' ') || student.name || 'Anonymous';
+                  const courseName = testimonial.course?.name || testimonial.course?.title || student.course?.name || student.course?.title || '';
+                  const batchName = testimonial.batch?.name || student.batch?.name || '';
                   const rating = testimonial.rating || 5;
                   const text = testimonial.testimonialText || testimonial.experience || '';
 

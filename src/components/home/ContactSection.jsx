@@ -1,6 +1,28 @@
 import React from 'react';
+import { submitContactForm } from '../../api/contact';
+import { publicCourses } from '../../constants/publicCourses';
 
 const ContactSection = () => {
+  const [formData, setFormData] = React.useState({
+    fullName: '',
+    phone: '',
+    course: '',
+    message: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({ ...current, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await submitContactForm({
+      source: 'Homepage',
+      ...formData,
+    });
+  };
+
   return (
     <section className="py-20 px-4 md:px-10 bg-white">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
@@ -37,13 +59,13 @@ const ContactSection = () => {
             <a href="https://wa.me/919046442337" className="bg-[#25D366] text-white px-5 py-3 rounded-lg hover:scale-105 transition shadow-md font-bold text-sm">
               WhatsApp Us
             </a>
-            <a href="tel:+919046442337" className="bg-secondary text-white px-5 py-3 rounded-lg hover:scale-105 transition shadow-md font-bold text-sm">
-              Call Support
+            <a href="mailto:info@ansdb.org" className="bg-secondary text-white px-5 py-3 rounded-lg hover:scale-105 transition shadow-md font-bold text-sm">
+              Email Support
             </a>
           </div>
           <div className="h-64 rounded-lg overflow-hidden shadow-lg border-2 border-slate-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.8804918731557!2d88.34185737604313!3d22.620935530510656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89d9e4a30e8a7%3A0x6730248e36780c8e!2sBelur%20Math%2C%20Howrah%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps?q=Natunpukur%2C%202nd%20Rabindra%20Sarani%20Lane%2C%20Bolpur%2C%20West%20Bengal%2C%20731204&output=embed"
               width="100%"
               height="100%"
               className="border-0 grayscale hover:grayscale-0 transition-all duration-700"
@@ -59,42 +81,53 @@ const ContactSection = () => {
           <h3 className="text-2xl font-display font-bold text-primary mb-8">Quick Enquiry</h3>
           <form 
             className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Your enquiry has been submitted successfully! Our team will contact you shortly.");
-            }}
+            onSubmit={handleSubmit}
           >
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">Full Name</label>
               <input
                 className="w-full rounded-lg border border-slate-200 p-3 focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                name="fullName"
+                onChange={handleChange}
                 placeholder="Enter your name"
                 type="text"
+                value={formData.fullName}
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">Mobile Number</label>
               <input
                 className="w-full rounded-lg border border-slate-200 p-3 focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                name="phone"
+                onChange={handleChange}
                 placeholder="Enter phone number"
                 type="tel"
+                value={formData.phone}
               />
             </div>
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">Interested Course</label>
-              <select className="w-full rounded-lg border border-slate-200 p-3 focus:outline-none focus:ring-2 focus:ring-primary bg-white">
-                <option>Select a Course</option>
-                <option>Mobile Repairing</option>
-                <option>Web Development</option>
-                <option>Junior Raw Madanic</option>
+              <select
+                className="w-full rounded-lg border border-slate-200 p-3 focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                name="course"
+                onChange={handleChange}
+                value={formData.course}
+              >
+                <option value="">Select a Course</option>
+                {publicCourses.map((course) => (
+                  <option key={course.id} value={course.title}>{course.title}</option>
+                ))}
               </select>
             </div>
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">Your Message</label>
               <textarea
                 className="w-full rounded-lg border border-slate-200 p-3 focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                name="message"
+                onChange={handleChange}
                 placeholder="How can we help you?"
                 rows="4"
+                value={formData.message}
               ></textarea>
             </div>
             <button

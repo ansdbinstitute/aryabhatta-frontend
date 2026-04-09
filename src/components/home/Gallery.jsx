@@ -1,15 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', alt: 'Coding Class', big: true },
-  { src: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=400&q=80', alt: 'Hardware Repair' },
-  { src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80', alt: 'Circuit Board' },
-  { src: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80', alt: 'Computer Lab' },
-  { src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=400&q=80', alt: 'Technical Work' },
-];
+import { publicGalleryImages } from '../../constants/publicGalleryImages';
 
 const Gallery = () => {
+  const galleryImages = publicGalleryImages;
+
   return (
     <section className="py-20 px-4 md:px-10" style={{ backgroundColor: '#0A192F' }}>
       <div className="max-w-7xl mx-auto">
@@ -29,12 +24,12 @@ const Gallery = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px]">
           {/* Big image - eager load (above the fold) */}
           <div className="col-span-2 row-span-2 bg-slate-800 rounded-lg overflow-hidden border-2 border-accent/30 group">
-            <img src={galleryImages[0].src} alt={galleryImages[0].alt} loading="eager" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src={galleryImages[0].imgSrc} alt={galleryImages[0].alt} loading="eager" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
           {/* Smaller images - lazy load (below the fold) */}
           {galleryImages.slice(1).map((img, i) => (
             <div key={i} className="bg-slate-800 rounded-lg overflow-hidden border-2 border-accent/30 group">
-              <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src={img.imgSrc} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
           ))}
         </div>

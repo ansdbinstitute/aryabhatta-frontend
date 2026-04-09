@@ -89,23 +89,23 @@ const StudentExamsPage = () => {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 md:space-y-8">
       <div>
-        <h2 className="text-3xl font-black text-slate-800 tracking-tight flex items-center gap-3">
-           <Bell className="w-8 h-8 text-blue-600" />
-           EXAM NOTICES & APPROVALS
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-slate-800 flex items-center gap-2 md:gap-3">
+           <Bell className="w-6 md:w-7 lg:w-8 h-6 md:h-7 lg:h-8 text-blue-600" />
+           Exam Notices & Approvals
         </h2>
-        <p className="text-slate-500 font-bold text-xs uppercase tracking-widest mt-1 opacity-70">
-          Course: <span className="text-blue-600 underline underline-offset-4 decoration-blue-200">{student?.course?.title || 'GENERAL'}</span>
+        <p className="text-slate-500 font-medium text-xs md:text-sm mt-1 md:mt-2">
+          Course: <span className="text-blue-600 underline decoration-blue-200">{student?.course?.title || 'General'}</span>
         </p>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
         {exams.length === 0 ? (
-          <div className="xl:col-span-2 py-20 text-center bg-white rounded-3xl border border-dashed border-slate-200">
-             <AlertCircle className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-             <h3 className="text-lg font-black text-slate-800 tracking-tight">No Active Exam Campaigns</h3>
-             <p className="text-slate-500 font-medium text-sm mt-1">There are no exams currently scheduled for your course.</p>
+          <div className="xl:col-span-2 py-12 md:py-16 lg:py-20 text-center bg-white rounded-2xl border border-dashed border-slate-200">
+             <AlertCircle className="w-8 md:w-10 lg:w-12 h-8 md:h-10 lg:h-12 text-slate-300 mx-auto mb-3 md:mb-4" />
+             <h3 className="text-base md:text-lg font-bold text-slate-800">No Active Exam Campaigns</h3>
+             <p className="text-slate-500 font-medium text-xs md:text-sm mt-1">There are no exams currently scheduled for your course.</p>
           </div>
         ) : (
           exams.map((exam) => {
@@ -115,8 +115,8 @@ const StudentExamsPage = () => {
             const isRejected = approval?.status === 'rejected';
 
             return (
-              <div key={exam.id} className="bg-white rounded-[40px] border border-slate-100 shadow-sm p-8 hover:shadow-xl hover:border-blue-100 transition-all group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-full blur-3xl -z-10 -mr-16 -mt-16 group-hover:bg-blue-50 transition-colors" />
+              <div key={exam.id} className="bg-white rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm p-5 md:p-6 lg:p-8 hover:shadow-lg hover:border-blue-100 transition-all group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-slate-50 rounded-full blur-2xl md:blur-3xl -z-10 -mr-12 md:-mr-16 -mt-12 md:-mt-16 group-hover:bg-blue-50 transition-colors" />
                 
                 <div className="flex items-start justify-between mb-8">
                    <div>

@@ -21,7 +21,7 @@ const LoginCTA = () => {
                 Apply for Affiliation
               </button>
             </Link>
-            <Link to="/about">
+            <Link to="/contact">
               <button className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-primary px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 active:scale-95 text-center">
                 View Requirements
               </button>

@@ -71,7 +71,7 @@ const usePlacementStore = create((set, get) => ({
       const response = await client.get('/student-testimonials', {
         params: {
           'sort': 'createdAt:desc',
-          populate: ['student', 'student.profileImage', 'course', 'batch'],
+          populate: '*',
           ...filters,
         }
       });
