@@ -13,7 +13,7 @@ const SecretaryLeadership = () => {
             <img 
               alt="A. Ghosh — Secretary, ANSDB" 
               className="w-full h-full object-cover" 
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src="/images/secretary.jpg" 
               loading="lazy"
             />
           </div>
