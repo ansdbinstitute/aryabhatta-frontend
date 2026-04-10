@@ -107,7 +107,7 @@ const NoticeListing = () => {
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-display font-black text-primary flex items-center gap-3">
             Important Notices
-            <span className="bg-danger/10 text-danger text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider animate-pulse">Live from ERP</span>
+            <span className="bg-danger/10 text-danger text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider animate-pulse">LIVE</span>
           </h2>
         </div>
 
