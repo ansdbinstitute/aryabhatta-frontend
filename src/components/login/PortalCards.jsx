@@ -56,13 +56,13 @@ const PortalCards = () => {
             <p className="text-slate-600 mb-8 flex-grow">
               Management portal for affiliated training centers, partner institutes, and skill development providers.
             </p>
-            <a
-              href={import.meta.env.DEV ? "/erp/login?portal=institute&force=true" : "https://ims.ansdb.org/erp/login?portal=institute"}
+            <Link
+              to="/erp/login?portal=institute"
               className="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-secondary transition-colors shadow-md flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
             >
               Enter Institute Portal
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           {/* Admin Login Card */}
@@ -74,13 +74,13 @@ const PortalCards = () => {
             <p className="text-slate-600 mb-8 flex-grow">
               Secure access gateway for board officials, regional coordinators, and system administrators.
             </p>
-            <a
-              href={import.meta.env.DEV ? "/erp/login?portal=administration&force=true" : "https://ims.ansdb.org/erp/login?portal=administration"}
+            <Link
+              to="/erp/login?portal=administration"
               className="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-secondary transition-colors shadow-md flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
             >
               Enter Admin Portal
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
