@@ -11,7 +11,7 @@ const NoticeHero = () => {
       if (permission === 'granted') {
         new Notification('ANSDB Notifications', {
           body: 'You are successfully subscribed to the latest public notices and updates!',
-          icon: '/logo.png'
+          icon: '/favicon.png'
         });
       }
     });

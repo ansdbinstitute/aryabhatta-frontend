@@ -87,7 +87,7 @@ const LoginPage = ({
       <div className="relative w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white shadow-lg shadow-black/10 mb-4 p-2">
-            <img src="/logo.png" alt="ANSDB Logo" className="w-full h-full object-contain" />
+            <img src="/favicon.png" alt="ANSDB Logo" className="w-full h-full object-contain" />
           </div>
           <h1 className="text-white text-2xl font-bold tracking-tight">{brandTitle}</h1>
           <p className="text-blue-200/60 text-sm mt-1">{brandSubtitle}</p>

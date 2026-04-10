@@ -52,7 +52,7 @@ const StudentSidebar = ({ isOpen, onClose }) => {
         <div className="p-4 md:p-5 border-b border-slate-800">
           <div className="flex items-center gap-2.5 md:gap-3">
             <div className="w-9 md:w-10 h-9 md:h-10 rounded-lg md:rounded-xl bg-white/10 flex items-center justify-center border border-white/10 shadow-inner group-hover:scale-105 transition-transform">
-              <img src="/logo.png" alt="Logo" className="w-5 md:w-6 h-5 md:h-6 object-contain" />
+              <img src="/favicon.png" alt="Logo" className="w-5 md:w-6 h-5 md:h-6 object-contain" />
             </div>
             <div>
               <h1 className="text-white font-black text-base md:text-lg tracking-tight leading-tight">ANSDB</h1>

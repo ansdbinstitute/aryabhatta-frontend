@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'Aryabhatta National Skill Development Board';
 const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://www.ansdb.org';
-const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/favicon.png`;
 
 const defaultOrganizationSchema = {
   '@context': 'https://schema.org',

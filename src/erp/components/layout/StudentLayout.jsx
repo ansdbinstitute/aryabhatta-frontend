@@ -35,7 +35,7 @@ const StudentLayout = ({
             {/* Logo */}
             <div className="flex items-center gap-3">
               <img
-                src="/logo.png"
+                src="/favicon.png"
                 alt="ANSDB Logo"
                 className="h-10 w-10 rounded-lg bg-white object-contain p-1 shadow-sm"
               />

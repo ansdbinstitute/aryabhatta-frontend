@@ -59,7 +59,7 @@ const StudentLoginPage = () => {
         {/* Logo and Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-2xl shadow-xl mb-6 p-3">
-            <img src="/logo.png" alt="ANSDB Logo" className="w-full h-full object-contain" />
+            <img src="/favicon.png" alt="ANSDB Logo" className="w-full h-full object-contain" />
           </div>
           <h1 className="text-white text-2xl font-bold tracking-tight">ANSDB Student Portal</h1>
           <p className="text-blue-200/60 text-sm mt-2">Learning, results, notices, and payment access</p>
