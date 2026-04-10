@@ -122,7 +122,11 @@ const ExamListPage = () => {
                       <p className="text-xs text-slate-400">{exam.batch?.name || 'All Batches'}</p>
                     </td>
                     <td className="px-4 py-4 text-center">
-                      {exam.status === 'conducted' ? (
+                      {exam.status === 'upcoming' ? (
+                        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-full uppercase tracking-wider">
+                          <Clock className="w-3 h-3" /> Upcoming
+                        </span>
+                      ) : exam.status === 'conducted' ? (
                         <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full uppercase tracking-wider">
                           <CheckCircle className="w-3 h-3" /> Conducted
                         </span>
@@ -134,13 +138,10 @@ const ExamListPage = () => {
                         <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-600 bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wider">
                            Postponed
                         </span>
-                      ) : upcoming ? (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-full uppercase tracking-wider">
-                          <Clock className="w-3 h-3" /> Upcoming
-                        </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full uppercase tracking-wider">
-                          <CheckCircle className="w-3 h-3" /> Conducted
+                        <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider ${upcoming ? 'text-amber-600 bg-amber-50' : 'text-emerald-600 bg-emerald-50'}`}>
+                          {upcoming ? <Clock className="w-3 h-3" /> : <CheckCircle className="w-3 h-3" />}
+                          {upcoming ? 'Upcoming' : 'Conducted'}
                         </span>
                       )}
                     </td>
