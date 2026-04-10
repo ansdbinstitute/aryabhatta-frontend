@@ -12,6 +12,15 @@ const useCurrentStudent = () => {
     let isMounted = true;
 
     const loadStudent = async () => {
+      // Optimization: if the user in store is already the enriched student object (+ has uid), use it
+      if (user?.uid) {
+        if (isMounted) {
+          setStudent(user);
+          setIsLoading(false);
+        }
+        return;
+      }
+
       if (!user?.id || user?.roleType !== 'student') {
         if (isMounted) {
           setStudent(null);
