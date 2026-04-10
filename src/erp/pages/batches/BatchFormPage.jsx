@@ -85,9 +85,10 @@ const BatchFormPage = () => {
         endDate: data.endDate,
         capacity: Number(data.capacity),
         status: data.status,
-        // Convert relation fields to Strapi v5 object format
-        course: data.course ? { documentId: data.course } : null,
-        teacher: data.teacher ? { documentId: data.teacher } : null,
+        // Course uses Document ID in Strapi 5
+        course: (data.course && data.course !== '') ? { documentId: data.course } : null,
+        // Teacher is a users-permissions relation, which uses direct integer IDs
+        teacher: (data.teacher && data.teacher !== '') ? Number(data.teacher) : null,
       };
 
       if (isEdit) {
