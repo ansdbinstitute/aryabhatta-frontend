@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import { authApi } from '../../erp/api/auth';
+import { studentsApi } from '../../erp/api/students';
 import { STORAGE_KEYS, ROLES } from '../../erp/utils/constants';
+import { extractData } from '../../erp/api/client';
 
 const useStudentAuthStore = create((set, get) => ({
   // ─── State ───
@@ -27,9 +29,13 @@ const useStudentAuthStore = create((set, get) => ({
          throw new Error("Invalid student token");
       }
 
+      // Fetch student profile for image and other details
+      const studentRes = await studentsApi.me();
+      const profile = extractData(studentRes);
+
       set({
         token,
-        user,
+        user: { ...user, ...profile },
         isAuthenticated: true,
         isLoading: false,
         error: null,
@@ -52,12 +58,7 @@ const useStudentAuthStore = create((set, get) => ({
       const response = await authApi.login(identifier, password);
       const { jwt } = response.data;
 
-      // Temporary set token in ISOLATED student storage for getMe to work correctly over API
       localStorage.setItem(STORAGE_KEYS.STUDENT_TOKEN, jwt);
-
-      // Note: Because we rely strictly on the window path, getMe will pick up STUDENT_TOKEN.
-      // But just to be sure, in client.js it defaults to checking url path starting with '/student'.
-      // If we are on /student/login, it works.
 
       const meResponse = await authApi.getMe();
       const user = meResponse.data;
@@ -68,11 +69,16 @@ const useStudentAuthStore = create((set, get) => ({
         throw new Error('Access Denied: This is the Student Portal. Please use your Student UID to login.');
       }
 
-      localStorage.setItem(STORAGE_KEYS.STUDENT_USER, JSON.stringify(user));
+      // Fetch student profile for fully enriched user data (including image)
+      const studentRes = await studentsApi.me();
+      const profile = extractData(studentRes);
+      const enrichedUser = { ...user, ...profile };
+
+      localStorage.setItem(STORAGE_KEYS.STUDENT_USER, JSON.stringify(enrichedUser));
       
       set({
         token: jwt,
-        user,
+        user: enrichedUser,
         isAuthenticated: true,
         isLoading: false,
         error: null,

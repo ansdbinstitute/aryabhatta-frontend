@@ -16,6 +16,9 @@ export const studentsApi = {
   delete: (id) =>
     client.delete(`/students/${id}`),
 
+  me: () =>
+    client.get('/students/me'),
+
   createPortalAccess: (id) =>
     client.post(`/students/${id}/portal-access`),
 
