@@ -13,6 +13,8 @@ const StudentResultsPage = lazy(() => import('../pages/StudentResultsPage'));
 const StudentCertificatesPage = lazy(() => import('../pages/StudentCertificatesPage'));
 const StudentPaymentsPage = lazy(() => import('../pages/StudentPaymentsPage'));
 const StudentIDCardPage = lazy(() => import('../pages/StudentIDCardPage'));
+// Initialize auth on module load
+useStudentAuthStore.getState().initialize();
 
 // Loading fallback
 const PageLoader = () => (
