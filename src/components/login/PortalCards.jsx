@@ -57,7 +57,7 @@ const PortalCards = () => {
               Management portal for affiliated training centers, partner institutes, and skill development providers.
             </p>
             <a
-              href={import.meta.env.DEV ? "/erp/login?portal=institute&force=true" : "https://portal.institute.ansdb.org"}
+              href={import.meta.env.DEV ? "/erp/login?portal=institute&force=true" : "https://ims.ansdb.org/erp/login?portal=institute"}
               className="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-secondary transition-colors shadow-md flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
             >
               Enter Institute Portal
@@ -75,7 +75,7 @@ const PortalCards = () => {
               Secure access gateway for board officials, regional coordinators, and system administrators.
             </p>
             <a
-              href={import.meta.env.DEV ? "/erp/login?portal=administration&force=true" : "https://portal.institute.ansdb.org"}
+              href={import.meta.env.DEV ? "/erp/login?portal=administration&force=true" : "https://ims.ansdb.org/erp/login?portal=administration"}
               className="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-secondary transition-colors shadow-md flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
             >
               Enter Admin Portal
