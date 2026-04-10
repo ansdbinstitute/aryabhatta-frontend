@@ -87,9 +87,12 @@ const BatchFormPage = () => {
         status: data.status,
         // Course uses Document ID in Strapi 5
         course: (data.course && data.course !== '') ? { documentId: data.course } : null,
-        // Teacher is a users-permissions relation, which uses direct integer IDs
-        teacher: (data.teacher && data.teacher !== '') ? Number(data.teacher) : null,
       };
+
+      // Conditionally add teacher only if selected to avoid "Invalid key teacher" validation errors with null values
+      if (data.teacher && data.teacher !== '') {
+        payload.teacher = Number(data.teacher);
+      }
 
       if (isEdit) {
         await batchesApi.update(id, payload);
