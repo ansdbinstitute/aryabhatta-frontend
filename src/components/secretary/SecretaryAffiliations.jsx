@@ -10,7 +10,6 @@ const iconMap = {
 
 const affiliations = [
   { icon: 'account_balance', label: 'Govt. Registered', sub: 'Ministry of Corporate Affairs', color: 'text-primary bg-blue-50' },
-  { icon: 'policy', label: 'Niti Aayog', sub: 'Registered NGO', color: 'text-emerald-600 bg-emerald-50' },
   { icon: 'precision_manufacturing', label: 'MSME Affiliated', sub: 'Govt of India', color: 'text-orange-600 bg-orange-50' },
   { icon: 'badge', label: 'ISO 9001:2015', sub: 'Quality Management', color: 'text-purple-600 bg-purple-50' },
 ];
@@ -22,7 +21,7 @@ const SecretaryAffiliations = () => {
         <p className="text-center text-sm font-black uppercase tracking-[0.25em] text-slate-400 mb-12">
           Trusted &amp; Accredited By
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {affiliations.map((a, i) => (
             <div
               key={i}
