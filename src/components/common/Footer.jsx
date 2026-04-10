@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
 
         <div className="max-w-7xl mx-auto mt-10 md:mt-16 pt-6 md:pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs gap-3 md:gap-4 text-center md:text-left">
-          <p>&copy; 2024 Aryabhatta National Skill Development Board. All rights reserved.</p>
+          <p>&copy; 2026 Aryabhatta National Skill Development Board. All rights reserved.</p>
           <p>Managed by Jebaankushal Foundation</p>
         </div>
       </div>
