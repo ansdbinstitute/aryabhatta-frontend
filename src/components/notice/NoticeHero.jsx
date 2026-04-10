@@ -2,6 +2,21 @@ import React from 'react';
 import { Bell } from 'lucide-react';
 
 const NoticeHero = () => {
+  const handleNotifyMe = () => {
+    if (!('Notification' in window)) {
+      alert('This browser does not support desktop notifications');
+      return;
+    }
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        new Notification('ANSDB Notifications', {
+          body: 'You are successfully subscribed to the latest public notices and updates!',
+          icon: '/logo.png'
+        });
+      }
+    });
+  };
+
   return (
     <section 
       className="relative overflow-hidden py-24 lg:py-32"
@@ -33,16 +48,10 @@ const NoticeHero = () => {
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <button 
             className="bg-accent text-primary hover:brightness-105 px-8 py-4 rounded-xl font-bold shadow-xl flex items-center gap-2 transition-all hover:scale-105"
-            onClick={() => window.scrollBy({top: window.innerHeight * 0.8, behavior: 'smooth'})}
+            onClick={handleNotifyMe}
           >
             <Bell className="w-5 h-5" />
             Latest Updates
-          </button>
-          <button 
-            className="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md px-8 py-4 rounded-xl font-bold border border-white/20 transition-all hover:scale-105"
-            onClick={() => alert("The 2024 Exam Calendar PDF will be available for download shortly.")}
-          >
-            Exam Calendar 2024
           </button>
         </div>
       </div>
