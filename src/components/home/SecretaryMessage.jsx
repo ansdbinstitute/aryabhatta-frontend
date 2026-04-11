@@ -15,7 +15,7 @@ const SecretaryMessage = () => {
             />
             <div className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-xl">
               <h4 className="font-bold text-primary">A. Ghosh</h4>
-              <p className="text-xs uppercase font-bold text-white tracking-widest">Secretary ANSDB</p>
+              <p className="text-[10px] uppercase font-bold text-white tracking-widest leading-tight mt-1">Secretary, Aryabhatta National Skill Development Board (ANSDB)</p>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@ const SecretaryMessage = () => {
             "Skill development is the most powerful tool for individual growth and national prosperity."
           </blockquote>
           <p className="text-slate-600 leading-relaxed">
-            Our institution is committed to creating a pathway for students to achieve their dreams. By focusing on practical, hands-on training, we ensure that every graduate from ANSDB is ready for the real-world challenges of the industrial workforce.
+            Our institution is committed to creating a pathway for students to achieve their dreams. By focusing on practical, hands-on training, we ensure that every graduate from Aryabhatta National Skill Development Board (ANSDB) is ready for the real-world challenges of the industrial workforce.
           </p>
           <Link to="/secretary">
             <button className="border-2 border-accent text-primary px-8 py-3 rounded-lg font-bold hover:bg-accent transition-all hover:scale-105">
