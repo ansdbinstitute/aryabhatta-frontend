@@ -15,7 +15,7 @@ const SecretaryMessage = () => {
             />
             <div className="absolute -bottom-6 -right-6 bg-accent p-6 rounded-lg shadow-xl">
               <h4 className="font-bold text-primary">A. Ghosh</h4>
-              <p className="text-[10px] uppercase font-bold text-white tracking-widest leading-tight mt-1">Secretary, Aryabhatta National Skill Development Board (ANSDB)</p>
+              <p className="text-xs uppercase font-bold text-white tracking-widest">Secretary, Aryabhatta National Skill Development Board (ANSDB)</p>
             </div>
           </div>
         </div>
