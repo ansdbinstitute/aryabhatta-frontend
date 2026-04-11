@@ -62,9 +62,12 @@ const Hero = () => {
           <span className="inline-block text-accent font-bold tracking-[0.2em] text-xs uppercase border-b-2 border-accent pb-1">
             Government Registered · ISO Certified
           </span>
-          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold leading-tight">
-            Empowering Youth Through Skill Development
+          <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
+            Aryabhatta National Skill Development Board (ANSDB)
           </h1>
+          <p className="text-accent text-lg md:text-xl font-bold tracking-wide">
+            Empowering Youth Through Skill Development
+          </p>
           <p className="text-blue-100 text-base md:text-lg max-w-lg leading-relaxed">
             Join India's leading vocational training board. We provide industry-standard certifications and practical training for a brighter career.
           </p>

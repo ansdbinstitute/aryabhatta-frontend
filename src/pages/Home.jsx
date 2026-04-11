@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="flex flex-col overflow-hidden">
       <Seo
-        title="Aryabhatta National Skill Development Board (ANSDB) | Skill Development Institute in Bolpur"
+        title="Aryabhatta National Skill Development Board (ANSDB) | Bolpur"
         description="ANSDB is a leading skill development institute in Bolpur offering practical, career-focused training. Explore courses and start your journey today."
         path="/"
         keywords={[

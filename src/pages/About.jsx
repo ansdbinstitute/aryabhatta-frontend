@@ -12,7 +12,7 @@ const About = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark min-h-screen font-body text-slate-900 dark:text-slate-100">
       <Seo
-        title="Best Institute in Bolpur | About ANSDB"
+        title="About Us | Aryabhatta National Skill Development Board (ANSDB)"
         description="Learn why ANSDB is trusted as one of the best institutes in Bolpur for skill development, vocational education, and student career growth."
         path="/about"
         keywords={[
@@ -31,7 +31,7 @@ const About = () => {
       <section className="relative bg-gradient-to-r from-primary to-secondary py-12 md:py-16 px-6 md:px-20 overflow-hidden">
         <div className="absolute inset-0 diagonal-pattern opacity-30"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-          <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-6">About ANSDB</h1>
+          <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">Aryabhatta National Skill Development Board (ANSDB)</h1>
           <nav className="flex justify-center items-center gap-2 text-white/80 text-sm md:text-base font-medium font-sans">
             <Link to="/" className="hover:text-accent transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3" />
