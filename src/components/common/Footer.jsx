@@ -16,7 +16,7 @@ const Footer = () => {
               <h2 className="text-white font-bold text-2xl md:text-3xl tracking-tighter font-display">ANSDB</h2>
             </div>
             <p className="text-sm leading-relaxed text-slate-400 max-w-[280px]">
-              ANSDB is committed to excellence in vocational education and practical skill development in Bolpur.
+              Aryabhatta National Skill Development Board (ANSDB) is committed to excellence in vocational education and practical skill development in Bolpur.
             </p>
             <div className="flex gap-3 md:gap-4">
               <a href="https://www.facebook.com/ansdbbolpur/" target="_blank" rel="noopener noreferrer" className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] transition-all duration-300 group shadow-lg hover:scale-110">
