@@ -13,10 +13,10 @@ const Footer = () => {
           <div className="space-y-4 md:space-y-6">
             <div className="flex items-center gap-3">
               <img src="/favicon.png" alt="ANSDB Logo" className="h-10 md:h-14 w-auto bg-white p-1 rounded-sm shadow-lg" />
-              <h2 className="text-white font-bold text-xl md:text-2xl tracking-tighter font-display leading-tight">Aryabhatta National Skill Development Board (ANSDB)</h2>
+              <h2 className="text-white font-bold text-2xl md:text-3xl tracking-tighter font-display">ANSDB</h2>
             </div>
             <p className="text-sm leading-relaxed text-slate-400 max-w-[280px]">
-              Aryabhatta National Skill Development Board is committed to excellence in vocational education and practical skill development in Bolpur.
+              ANSDB is committed to excellence in vocational education and practical skill development in Bolpur.
             </p>
             <div className="flex gap-3 md:gap-4">
               <a href="https://www.facebook.com/ansdbbolpur/" target="_blank" rel="noopener noreferrer" className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#1877F2] transition-all duration-300 group shadow-lg hover:scale-110">
