@@ -311,10 +311,10 @@ const ExamApprovalPage = () => {
           </div>
         </div>
 
-        {activeTab === 'pending' && expandedRequest && (
+        {expandedRequest && (
           <div className="p-4 bg-slate-50 border-b border-slate-100">
             <p className="text-sm text-slate-600 mb-2">Expanded Request:</p>
-            {renderRequestCard(pendingApprovals.find(p => p.id === expandedRequest) || {})}
+            {renderRequestCard((activeTab === 'pending' ? pendingApprovals : approvals).find(p => p.id === expandedRequest) || {})}
           </div>
         )}
 

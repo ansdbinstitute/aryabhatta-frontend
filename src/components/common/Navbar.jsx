@@ -46,7 +46,7 @@ const Navbar = () => {
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-2 md:gap-3 group">
             <img src="/favicon.png" alt="ANSDB Logo" className="h-[40px] md:h-[60px] w-auto transition-transform group-hover:scale-105" />
-            <div className="hidden sm:block">
+            <div className="block">
               <div className="text-white font-bold text-xl md:text-2xl leading-none font-display">ANSDB</div>
               <p className="text-accent uppercase tracking-widest mt-1 text-[8px] md:text-[10px] font-bold leading-tight">
                 Aryabhatta National Skill<br />Development Board

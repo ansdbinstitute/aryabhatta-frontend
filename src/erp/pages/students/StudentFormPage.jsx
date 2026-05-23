@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import useStudentStore from '../../stores/studentStore';
 import useCourseStore from '../../stores/courseStore';
+import useAuthStore from '../../stores/authStore';
+import useBranchStore from '../../stores/branchStore';
 import useToast from '../../hooks/useToast';
 import PageHeader from '../../components/common/PageHeader';
 import Button from '../../components/ui/Button';
@@ -21,6 +23,9 @@ const StudentFormPage = () => {
 
   const { currentStudent, fetchStudentById, createStudent, updateStudent, isLoading } = useStudentStore();
   const { courses, batches, fetchCourses, fetchBatches } = useCourseStore();
+  const { branches, fetchBranches } = useBranchStore();
+  const { user } = useAuthStore();
+  const isInstituteAdmin = user?.roleType === 'institute_admin';
 
   const { register, handleSubmit, watch, reset, formState: { errors } } = useForm({
     defaultValues: {
@@ -41,7 +46,8 @@ const StudentFormPage = () => {
   // Initial Load
   useEffect(() => {
     fetchCourses();
-    fetchBatches({ 'pagination[pageSize]': 100 }); // load all batches
+    fetchBatches({ 'pagination[pageSize]': 100 });
+    fetchBranches(); // load all batches
     if (isEdit) {
       fetchStudentById(id);
     }
@@ -330,6 +336,16 @@ const StudentFormPage = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {isInstituteAdmin && (
+              <Select
+                label="Branch"
+                options={branches.map(b => ({ value: b.id, label: b.name }))}
+                {...register('branch', { required: 'Branch is required' })}
+                error={errors.branch?.message}
+                required
+              />
+            )}
+
             <Select
               label="Course"
               options={courses.map(c => ({ value: c.documentId || c.id, label: c.title }))}

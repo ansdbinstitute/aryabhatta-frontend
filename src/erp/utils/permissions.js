@@ -20,11 +20,10 @@ import useRolePermissionStore, { DEFAULT_PERMISSIONS } from '../stores/rolePermi
 const routeAllowed = (role, item) => {
   if (!role || !item) return false;
 
-  if (item.roles && !item.roles.includes(role)) {
-    return false;
-  }
-
   if (!item.resource) {
+    if (item.roles && !item.roles.includes(role)) {
+      return false;
+    }
     return true;
   }
 
@@ -145,6 +144,7 @@ const usePermissions = () => {
 };
 
 export const hasPermission = (role, resource, action) => {
+  if (role === ROLES.INSTITUTE_ADMIN) return true;
   try {
     const store = useRolePermissionStore.getState();
     if (store.permissions) {
@@ -163,6 +163,7 @@ export const hasPermission = (role, resource, action) => {
 };
 
 export const getAllowedActions = (role, resource) => {
+  if (role === ROLES.INSTITUTE_ADMIN) return ['create', 'read', 'update', 'delete'];
   try {
     const store = useRolePermissionStore.getState();
     if (store.permissions) {
