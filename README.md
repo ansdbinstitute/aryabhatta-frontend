@@ -2,7 +2,7 @@
 
 This codebase is proprietary and confidential.
 
-**Copyright (c) 2024 Pinaki Chakraborty. All Rights Reserved.**
+**Copyright (c) 2026 Pinaki Chakraborty. All Rights Reserved.**
 
 This code is licensed exclusively to:
 - **Aryabhatta National Skill Development Board (ANSDB)**
